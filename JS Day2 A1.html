@@ -1,0 +1,25 @@
+<html>
+    <title>LetsUpgrade: JS</title>
+        <body style="text-align: center;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;background-position-y: -5px; background-image: url(https://stackify.com/wp-content/uploads/2018/10/JavaScript-Tutorials-for-Beginners-1280x720.jpg);">
+            <h1><b>Javascript Essentials : Date and Time</b></h1>
+                <script type="text/javascript">
+                
+                    var days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];     //array of days in week
+                    var d=new Date();                                                                      
+                    day=days[d.getDay()];                                                                  //return numbers from 0 to 7 as Sun to Sat
+                    hour=d.getHours() > 12? 24-d.getHours() + "PM": d.getHours() + "AM";
+                    minutes=d.getMinutes()<10? "0" + d.getMinutes(): d.getMinutes() + "";
+                    seconds=d.getSeconds()<10? "0" + d.getSeconds(): d.getSeconds() + "";
+                    time=hour.bold() + " : " + minutes.bold() + " : " + seconds.bold();
+                    document.write("<b>Today is : </b><b style=color:crimson>"+day.bold()+"</b>"); 
+                    document.write("<b><br>Current Time is : </b><b style=color:crimson>"+time+"</b>");
+
+                </script>
+            <footer>
+            <p style="padding-top: 468px;">
+               <b>@Shrirang Diwakar : Ethical Hacker | Penetration Tester | Developer | Learner</b>
+            </p>
+        </footer>
+
+        </body>
+</html>
