@@ -7,7 +7,7 @@
                     var days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];     //array of days in week
                     var d=new Date();                                                                      
                     day=days[d.getDay()];                                                                  //return numbers from 0 to 7 as Sun to Sat
-                    hour=d.getHours() > 12? 24-d.getHours() + "PM": d.getHours() + "AM";
+                    hour=d.getHours() > 12? d.getHours() - 12 + "PM": d.getHours() + "AM";
                     minutes=d.getMinutes()<10? "0" + d.getMinutes(): d.getMinutes() + "";
                     seconds=d.getSeconds()<10? "0" + d.getSeconds(): d.getSeconds() + "";
                     time=hour.bold() + " : " + minutes.bold() + " : " + seconds.bold();
