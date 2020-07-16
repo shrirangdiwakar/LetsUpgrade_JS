@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetsUpgrade: JS</title>
+</head>
+<body style="text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; background-size: cover; background-image:url(https://www.freepptbackgrounds.net/wp-content/uploads/2019/11/Circular-powerpoint-slide-768x432.jpg);">
+
+    <h1><mark>Javascript Essentials</mark> Grading System</h1>
+    <h2 style="padding-top: 100px;"><br>Press f12 to see Grades obtained</h2>
+
+    <script>
+
+function withCond(){
+
+let marks=prompt("Enter the Marks to check");
+
+        if(marks>=80 && marks<=100)
+           console.log(`Marks are ${marks} and Grade is A`);
+        else if(marks<80 & marks>=70)
+          console.log(`Marks are ${marks} and Grade is B`);
+        else if(marks<70 & marks>=60)
+           console.log(`Marks are ${marks} and Grade is C`);
+        else if(marks<60 & marks>=50)
+           console.log(`Marks are ${marks} and Grade is D`);
+        else if(marks<50 & marks>=35)
+            console.log(`Marks are ${marks} and Grade is E`);
+        else if(marks<35)
+            console.log(`Marks are ${marks} and Grade is F`);
+        else
+            console.error("Enter Valid Marks")
+
+}
+
+//2. with Switch Case
+
+function withSwitch(){
+
+      console.log("Using Switch Case : ")
+      let marks1= prompt("Enter the Marks to check using switch case");
+
+
+      switch (true)
+      {
+      case marks1<35:
+      console.log(`Marks are ${marks1} and Grade is F`);
+      break;
+
+      case marks1<50 & marks1>=35:
+      console.log(`Marks are ${marks1} and Grade is E`);
+      break;
+
+      case marks1<60 & marks1>=50:
+      console.log(`Marks are ${marks1} and Grade is D`);
+      break;
+
+      case marks1<70 & marks1>=60:
+      console.log(`Marks are ${marks1} and Grade is C`);
+      break;
+
+      case marks1<80 & marks1>=70:
+      console.log(`Marks are ${marks1} and Grade is B`);
+      break;
+
+      case marks1>=80 && marks1<=100:
+      console.log(`Marks are ${marks1} and Grade is A`);
+      break;
+
+
+      default:
+      console.error("Enter Valid Marks")
+        }
+}
+
+   
+    
+
+
+    </script>
+
+<button style="font-size:18px; background-color: crimson; color:black;" onclick="withCond()">To Check Grade with Conditional Statements</button>
+<button style=" font-size:18px; background-color: crimson; color:black;" onclick="withSwitch()">To Check Grade with Switch</button>
+
+</body>
+    
+</body>
+</html>
