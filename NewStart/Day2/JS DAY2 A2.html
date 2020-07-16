@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetsUpgrade: JS</title>
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;background-size:cover; background-image: url(https://storage.pixteller.com/designs/designs-images/2019-03-27/05/simple-background-backgrounds-passion-simple-1-5c9b95d09002a.png);">
+    <h1 style="text"><mark style="background-color:yellow;">Javascript Essentials</mark> : String and Arrays</h1>    
+    
+    <abc-element style="text-align: left;">
+    
+        <h2 style="padding-left: 100px;padding-top: 20px;"><mark> String :</mark> There are 3 methods in JS to get Substring : 1.substring 2.substr 3.slice</h2>
+        <h4 style="padding-left: 100px;">1. str.slice(start, end) : <br>
+            Returns the part of the string from start to (but not including) end
+            <mark style="background-color: #d3d3d3; font-style: italic;">
+                <ul>let str = "stringify";<br>
+                
+                console.log( str.slice(0, 5) );  : Output -> strin
+                </ul>
+                console.log( str.slice(2) ); : Output -> ringify (everything from position 2)
+                <br>
+                console.log( str.slice(-4, -1) ); Output -> gif
+            </mark>
+
+            <br>
+            <br>
+            _____________________________________________
+
+        <h4 style="padding-left: 100px;padding-top: 10px;">2. str.substring(start, end) : <br>
+            Returns the part of the string between start and end. This is almost the same as slice, but it allows start to be greater than end. 
+            <mark style="background-color:lightcyan; font-style: italic;">
+                <ul>let str = "stringify";<br>
+                    
+                console.log( str.substring(2, 6) );  : Output -> ring
+                </ul>
+                console.log( str.substring(6, 2) );  : Output -> ring
+                </br>
+                console.log( str.substring(2) ); : Output -> ringify (everything from position 2)
+                <br>
+                Negative positions in substring method returns an empty string
+            </mark>
+        
+            <br>
+            <br>
+            _____________________________________________
+        
+            <h4 style="padding-left: 100px;padding-top: 10px;">3. str.substr(start, length) : <br>
+                Returns the part of the string from start with the given length. In contrast with the previous methods, this one allows us to specify the length instead of the ending position:
+                <mark style="background-color: #d3d3d3; font-style: italic;">
+                    <br>
+                    console.log( str.substr(2, 4) );    Output -> ring
+                    <br>
+                    console.log( str.substr(-4, 2) );   Output -> gi
+                </mark>
+            
+            <br>
+            <br>
+            _____________________________________________
+
+            
+            <h4 style="padding-left: 100px;padding-top: 20px;">
+            <br>
+            <mark style="background-color:lightslategray;color: white; ">Replacing String Content <br></mark>
+            The replace() method replaces a specified value with another value in a string:<br>
+            
+            <mark style="font-style: italic;;">var str2 = "I am improving myself!";<br>
+            console.log(str2.replace("improving", "Upgrading..,"));</mark>
+            </p>
+            <br><br>
+            </h4>
+
+
+   
+            
+            <h3 style="text-align: left;padding-left: 100px;">
+            ++++++++++++++++++++++++++++++++++++++++++++++++</br>
+            <br>
+
+    <h2 style="padding-left: 100px;padding-top: 20px;"><mark> Array </mark></h2>
+            
+            <h4 style="padding-left: 100px;">1. Deleting elements from Array :
+                <mark style="background-color: #d3d3d3; font-style: italic;">
+                    <ul>let arr = ["I", "go", "home"];<br>
+
+                    delete arr[1];  // remove "go"<br>
+                    </ul>
+                    <br>
+                </mark>
+                    Here the element will be removed but the position arr[1] will still be in use. <br><mark style="
+                    background-color:olive;">because delete obj.key removes a value by the key. 
+                    But for arrays we usually want the rest of elements to shift and occupy the freed place. We expect to have a shorter array now.
+                    <br>
+                    So, special methods should be used.</mark>
+                    <br>
+                </mark>
+            <h4 style="padding-left: 100px;padding-top: 20px;"><mark style="background-color: rgb(151, 142, 209);">**Splice Method for deletion of Elements**</mark>
+                <ul>                It can do everything: insert, remove and replace elements. </ul>
+                <br>    
+                1. Let’s start with the deletion:
+                <ul>
+                <br>
+                <mark style="background-color:#D3D3D3;font-style: italic;">let arr = ["I", "study", "JavaScript"];
+                <br>
+                arr.splice(1, 1); // from index 1 remove 1 element
+                <br>
+                alert( arr ); // ["I", "JavaScript"]
+                <br><br>
+                let arr = ["I", "study", "JavaScript", "right", "now"];
+                <br>
+                // remove 2 first elements <br>
+                let removed = arr.splice(0, 2);
+                <br>
+                alert( removed ); // "I", "study"  array of removed elements
+                </ul></mark>
+
+            <h4 style="padding-left: 100px;padding-top: 20px;"><mark style="background-color: rgb(139, 130, 202);">**Sort Method for Sorting of Elements**</mark>
+                <mark style="background-color:#D3D3D3; font-style: italic;">
+                <ul>
+                    let arr = [ 1, 2, 15 ];
+                    <br>
+                    // the method reorders the content of arr <br>
+                    arr.sort();<br>
+                  
+                    alert( arr );  // 1, 15, 2</mark>
+                  <br>
+                  <br>
+                </ul></mark>
+                  The items are sorted as strings by default.
+                  <mark style="background-color:#D3D3D3">
+                  <br>
+                Literally, all elements are converted to strings for comparisons.
+                <br> For strings, lexicographic ordering is applied and indeed "2" > "15".
+                To use our own sorting order, we need to supply a function as the argument of arr.sort().
+                The function should compare two arbitrary values and return:
+                  </br</mark>
+
+                <mark style="background-color:#D3D3D3;font-style: italic;">
+                <br><br>
+                    function compareNumeric(a, b) { <br>
+                    if (a > b) return 1;<br>
+                    if (a == b) return 0;<br>
+                    if (a < b) return -1; <br>
+                }<br>
+                <br>
+                let arr5 = [ 1, 15, 2 ];<br>
+                console.log(arr5);<br>
+                arr5.sort(compareNumeric);<br>
+                <br>
+                console.log(arr5);  // 1, 2, 15
+                </mark>
+                   
+    </abc-element>      
+    
+    <h1 style="padding-top: 200px; font-size:200px;text-align:justify;"><mark>THANK YOU</mark></h1>
+</body>
+</html>
