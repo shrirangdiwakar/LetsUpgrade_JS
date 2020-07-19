@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetsUpgrade: JS</title>
+</head>
+<body style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:lightgoldenrodyellow;">
+    
+    <!-- just a heading-->
+    <h1><mark>Javascript </mark><mark style="background-color:#d3d3d3;">: Assignment 5 (Sales-Commission)</mark></h1>
+
+    <!-- Marquee displaying detail of assignment -->
+    <h2><marquee style="background-color:black;color: white;font-style: italic;"scrollamount=20; >Problem Statement: Rewarding the Employees based upon their Sales during the Year</marquee></h2>
+    <h2>Cost of One Item is $20</h2>
+    <script>
+        var name = prompt("Enter Your Name");
+        var sales = parseInt(prompt("Enter your Yearly Sales"));
+
+        if (0<=sales && sales<=5000)
+            document.write(`<h3><mark style=background-color:#d3d3d3>Hello ${name}, On the basis of your sales, You made a Sale of $${20*sales} for the company and You have been Rewarded 2% Commission i.e ${(2*(sales*20))/100} for your Good Work`);
+        else if (5001<=sales && sales<=10000)
+            document.write(`<h3><mark style=background-color:#d3d3d3>Hello ${name}, On the basis of your sales, You made a Sale of $${20*sales} for the company and You have been Rewarded 5% Commission i.e ${(5*(sales*20))/100} for your Great Work`);
+        else if (10001<=sales && sales<=20000)
+            document.write(`<h3><mark style=background-color:#d3d3d3>Hello ${name}, On the basis of your sales, You made a Sale of $${20*sales} for the company and You have been Rewarded 7% Commission i.e ${(7*(sales*20))/100} for your Brilliant Work`);
+        else if (sales>20000)
+            document.write(`<h3><mark style=background-color:#d3d3d3>Hello ${name}, On the basis of your sales, You made a Sale of $${20*sales} for the company and You have been Rewarded 10% Commission i.e ${(10*(sales*20))/100} for your Extra-Ordinary Work`);
+        else
+            alert("Wrong number entered");
+
+    </script>
+
+
+</body>
+</html>

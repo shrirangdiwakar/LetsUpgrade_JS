@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letsupgrade: JS</title>
+</head>
+<body style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: coral;">
+    <h1><mark>Javascript </mark><mark style="background-color:#d3d3d3;">: Assignment 1 (LOOPS)</mark></h1>
+    <h2><marquee style="background-color:black;color: white;font-style: italic;"scrollamount=20; >NOTE: Output FIZZ denotes mutiple of 3, BUZZ denotes multiple of 5 and FIZZBUZZ denotes multiple of both 3 and 5</marquee></h2>
+    <script>
+
+        for(i=1;i<101;i++)
+        {
+            if (i%3==0 && i%5!=0)
+                document.write("<br><b style=color:black;font-size:large>",i," :Fizz");
+            else if(i%3!=0 && i%5==0)
+                document.write("<br><b style=color:white>",i," :Buzz");
+            else if(i%3==0 && i%5==0)
+                document.write("<br><b style=color:green>",i," :FizzBuzz");
+
+        }
+    </script>
+
+
+    
+</body>
+</html>

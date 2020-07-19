@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetsUpgrade: JS</title>
+</head>
+
+<body style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:beige;">
+    
+    <!-- just a heading-->
+    <h1><mark>Javascript </mark><mark style="background-color:#d3d3d3;">: Assignment 2 (DESTRUCTURING)</mark></h1>
+
+    <!-- Marquee displaying detail of assignment -->
+    <h2><marquee style="background-color:black;color: white;font-style: italic;"scrollamount=20; >MODERN JAVASCRIPT HAS BETTER HANDLING OF OBJECTS AND ARRAYS WITH A CONCEPT CALLED AS DESTRUCTURING</marquee></h2>
+    
+    
+    <!-- Destructuring defn-->
+    <br><h2>The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.</h2>
+
+    <div style="text-align:left; padding-left: 50px;">
+
+
+        <!-- CODE BEGINS -->
+    <script>
+        
+        // Problem just displayed using document.write
+        //The <br><code> tags are only to get proper aligned code (not necessary) and &emsp; denotes 4 spaces
+        document.write("<br><br><h2><code style=color:crimson>const student = {<br>&emsp;&emsp;&emsp;name:\"Helsinki\",<br>&emsp;&emsp;&emsp;age:24,<br>&emsp;&emsp;&emsp;projects: {<br>&emsp;&emsp;&emsp;&emsp;&emsp;diceGame: \"Two Player Dice Game using Javascript\"<br>&emsp;&emsp;&emsp;}<br></code></h2>}");
+         
+        //student object
+        const student = {
+            name:"Helsinki",
+            age:24,
+            projects:{
+                diceGame:"Two Player Dice Game using Javascript"
+            }
+        }
+            
+        //traditional method to display (avoid styling)
+        document.write("<h3><br><br>In normal scenario, we would do<br><h2 style=font-style:italic><code style=color:crimson;>document.write(student.name,student.age,student.projects.diceGame);</code></h2><h3>And Output will be:<h2><code style=color:crimson>",student.name,"<br>",student.age,"<br>",student.projects.diceGame,"</code></h2>");
+
+        //concept of destructuring
+        const { name, age, projects:{ diceGame} } = student;
+        
+        //printing values (avoid styling)
+        document.write("<h3>But if we write <h2 style=font-style:italic><code style=color:crimson>const { name, age, projects : { diceGame} } = student ;</code><h3>And then if we write <br><h2 style=font-style:italic><code style=color:crimson;>document.write(name,age,diceGame);</code></h2><h3>And Output will be:<h2><code style=color:crimson>",name,"<br>",age,"<br>",diceGame,"</code></h2>");
+        
+        document.write("<br><br><h2 style=padding-left:450px>THIS IS DESTRUCTURING</h2><br><br>")
+
+            
+    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetsUpgrade: JS</title>
+</head>
+<body style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:steelblue;">
+
+    <!-- just a heading-->
+    <h1><mark>Javascript </mark><mark style="color:white;background-color:rgb(46, 40, 40);">: Assignment 7 (Prime Numbers)</mark></h1>
+
+    <!-- Marquee displaying detail of assignment -->
+    <h2><marquee style="background-color:rgb(230, 220, 220);color: black;font-style: italic;"scrollamount=20; >Problem Statement: Displaying Prime numbers from 1 to N</marquee></h2>
+    
+    <script>
+        const num = parseInt(prompt("Enter any number and I will display Prime numbers from 1 to entered number"))
+
+        if (num<2)
+            document.write("<h2><mark style=background-color:crimson>Wrong input ,Prime Numbers start from 2")
+        
+        else{
+            
+            document.write(`<br><h3>The Prime Numbers from 2 to ${num} are: </h3>`);
+
+            for(i=2;i<=num;i++)
+            {
+                flag=1;
+                for(j=2;j<i;j++)
+                    {
+                        if (i%j==0){
+                            flag=0;
+                            break;
+                        }
+
+                    }
+                if (flag!=0)
+                    document.write(`<h3>${i}`);
+                    
+                    
+
+            }
+        }
+        
+        
+
+
+
+    </script>
+
+</body>
+</html>

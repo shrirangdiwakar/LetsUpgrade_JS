@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letsupgrade: JS</title>
+</head>
+<body style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:dimgray;">
+    <!-- just a heading-->
+    <h1><mark>Javascript </mark><mark style="background-color:#d3d3d3;">: Assignment 3 (SPREAD OPERATOR)</mark></h1>
+
+    <!-- Marquee displaying detail of assignment -->
+    <h2><marquee style="background-color:white;color: black;font-style: italic;"scrollamount=20; >The spread operator is a useful and quick syntax for adding items to arrays, combining arrays or objects, and spreading an array out into a function’s arguments.</marquee></h2>
+    
+    <script>
+        let shoppingList = ['tomatoes','veggies',"apples","jam","paneer","maggi","leafy vegetables"];
+        
+        //printing shopping list
+        document.write("<h2 style=text-align:left;padding-left:100px>Our Shopping list is:");
+        for (i in shoppingList)
+            document.write("<code style=color:yellow>&emsp; ",shoppingList[i],"</code>")
+        
+        //using spread operator to copy elements of list into basket
+        document.write("<br><br>Created a new list called Shopping Basket which is a copy of our Shopping list")
+        let shoppingBasket = [...shoppingList];
+
+        //items to add
+        document.write("<br><br>Adding new items in list : <code style=color:yellow> Bread, Butter, Cauliflower, Onions</code>");
+        
+        //adding and displaying new basket
+        shoppingBasket.push("Bread","Butter","Cauliflower","Onions");
+        document.write("<br><br><mark>New Shopping Basket is:</mark>")
+        for (i in shoppingBasket)
+            document.write("<code style=color:white>&emsp; ",shoppingBasket[i]);
+
+
+    </script>
+</body>
+</html>

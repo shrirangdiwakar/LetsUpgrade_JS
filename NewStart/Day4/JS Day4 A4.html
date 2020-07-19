@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetsUpgrade: JS</title>
+</head>
+<body style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:burlywood;">
+    <!-- just a heading-->
+    <h1><mark>Javascript </mark><mark style="background-color:#d3d3d3;">: Assignment 4 (CALCULATOR)</mark></h1>
+    
+    <!-- Marquee displaying detail of assignment -->
+    <h2><marquee style="background-color:white;color: black;font-style: italic;"scrollamount=20; >Calculator is been implemented with operations like Addition, Subtraction, Multiplication, Division, Square root and Percentage.</marquee></h2>
+    
+    <button style="height: 50px; width: 200px;" type="button" onclick="calculator();">CLICK HERE</button>
+
+    <script>
+    
+        function calculator(){
+            let choice = parseInt(prompt("1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Square Root\n6.Percentage\n\nEnter Your Choice of Operation to perform"));
+
+            switch(choice){
+
+                case 1:
+                    var num1 = parseInt(prompt("\nEnter first number"));
+                    var num2 = parseInt(prompt("\nEnter Second number"));
+                    alert(`The Addition of ${num1} and ${num2} is: ${num1+num2}`);
+                    break;
+
+                case 2:
+                    var num1 = parseInt(prompt("\nEnter first number"));
+                    var num2 = parseInt(prompt("\nEnter Second number"));
+                    alert(`The Subtraction of ${num1} and ${num2} is: ${num1-num2}`);
+                    break;
+                
+                case 3:
+                    var num1 = parseInt(prompt("\nEnter first number"));
+                    var num2 = parseInt(prompt("\nEnter Second number"));
+                    alert(`The Multiplication of ${num1} and ${num2} is: ${num1*num2}`);
+                    break;
+
+                case 4:
+                    var num1 = parseInt(prompt("\nEnter first number"));
+                    var num2 = parseInt(prompt("\nEnter Second number"));
+                    alert(`The Division of ${num1} and ${num2} is: ${num1/num2}`);
+                    break;
+
+                case 5:
+                    var num1 = parseInt(prompt("\nEnter number"));
+                    alert(`The Square Root of ${num1} is: ${(Math.sqrt(num1)).toFixed(3)}`);
+                    break;
+
+                case 6:
+                    var num1 = parseInt(prompt("\nEnter value of which % is to be found"));
+                    var num2 = parseInt(prompt("\nEnter total"));
+                    alert(`The Percentage of ${num1} with respect to ${num2} is: ${(num1*100)/num2}%`);
+                    break;
+
+                default:
+                    alert('Invalid Choice');
+                    break;
+
+        
+            }
+  
+        }
+
+
+    </script>
+    
+</body>
+</html>
