@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letsupgrade: JS</title>
+</head>
+<body style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:chocolate">
+
+    <!-- just a heading-->
+    <h1><mark>Javascript </mark><mark>: Assignment 2 (Classes and Inheritance)</mark></h1>
+
+    <!-- Marquee displaying detail of assignment -->
+    <h2><marquee style="background-color:rgb(255, 255, 255);color: black;font-style: italic;"scrollamount=20; >Problem Statement: Create a User class, its child class as Moderator and an Admin class inheriting properties of both User and Moderator</marquee></h2>
+
+    <h3><mark>Press F12 to see transactions</mark></h3>
+    
+    <script>
+
+        //User creation , login and logout
+        class User{
+            constructor(name,age,email,password){
+                this.name = name;
+                this.age = age;
+                this.email = email;
+                this.password=password;
+                this.luCoins = 0;
+                this.courses = [];
+            }
+
+            login(password){
+
+                if (password===this.password){
+                    console.log(`User ${this.name} has logged in`);
+                }
+                else  console.error(`Wrong Password for ${this.name}`);
+       
+            }
+            logout(){
+                console.log(`User ${this.name} has logged out`);
+        
+            }
+
+        }
+
+        //Moderator Class with add and remove coins privileges
+        class Moderator extends User{
+            constructor(name, age, email, password){
+                super(name, age, email, password);
+            }
+    
+  
+            addCoins(username, Mpassword) {
+                if(this.password===Mpassword){
+                    username.luCoins++;
+                    console.log(`Moderator Added LU coin(s) to ${username.name}.`);
+                    
+                }
+                else console.error(`Wrong Password for ${this.name}`);
+            }
+            removeCoins(username,Mpassword) {
+                if(this.password===Mpassword){
+                    username.luCoins--;
+                    console.log(`Moderator Deducted LU coin(s) from ${username.name}.`);
+                }
+                else console.error("Wrong Password for Moderator");
+            }
+
+
+        }
+
+
+        //ADMIN class with add and delete course privileges
+        class Admin extends Moderator{
+            constructor(name, age, email, password){
+                super(name,age,email,password);
+            }
+
+        addCourse(username,courseName,Apassword){
+            if (this.password===Apassword){
+                username.courses.push(courseName);
+                console.log(`Course of ${courseName} has been added to ${username.name}'s account`);
+
+            }
+            else console.error("Wrong Password for Admin");
+
+        }
+
+        deleteCourse(username,courseName,Apassword){
+            if (this.password===Apassword){
+                for(let i=0; i<username.courses.length; i++){
+                    
+                    if (username.courses[i]===courseName){
+                        username.courses.splice(i,1);
+                     
+                    }                    
+
+                }
+                
+                console.log(`Course of ${courseName} has been Deleted from ${username.name}'s account by Admin`);
+
+            }
+            else console.error("Wrong Password for Admin");
+
+        }
+        
+        }
+
+
+
+
+//step-wise object creation and function calling
+var user1 = new User('shrirang',20,'shrirang@diwakar.com','hello123');
+user1.login('wrong');
+user1.login('hello123');
+
+//JSON.stringify is used so that JSON objects are converted into JSON string and mainly if we directly log value, it will display current updated value and not earlier transaction
+//eg.if we add course, then display courses and delete any course, the display course will reflect no added courses because in present the course is deleted, i.e. logging into console is asynchronous
+
+console.log(JSON.stringify(user1));
+user1.logout();
+
+mod1 = new Moderator('Mod_Shri',24,'moderator@mod.com','imModerator');
+mod1.login('wrong');
+mod1.login('imModerator')
+mod1.addCoins('shrirang','wrongpass')
+mod1.addCoins(user1,'imModerator');
+mod1.addCoins(user1,'imModerator');
+mod1.addCoins(user1,'imModerator');
+console.log(JSON.stringify(user1));
+mod1.removeCoins(user1,'imModerator')
+console.log(JSON.stringify(user1));
+mod1.logout()
+
+var admin = new Admin('Admin',30,'admin@admin.com','imAdmin');
+admin.login('wrongpass')
+admin.login('imAdmin')
+admin.addCourse(user1,'Java','imAdmin')
+admin.addCourse(user1,'JS','imAdmin')
+admin.addCourse(user1,'AI-ML','imAdmin')
+admin.addCourse(user1,'Bug Bounty','imAdmin')
+console.log(JSON.stringify(user1));
+admin.deleteCourse(user1,'JS','imAdmin');
+console.log(JSON.stringify(user1));
+admin.deleteCourse(user1,'AI-ML','imwrong');
+admin.deleteCourse(user1,'AI-ML','imAdmin');
+console.log(JSON.stringify(user1));
+admin.logout()
+
+
+
+    </script>
+
+</body>
+</html>

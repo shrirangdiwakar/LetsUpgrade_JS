@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetsUpgrade: JS</title>
+</head>
+<body style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:cornsilk">
+
+    <!-- just a heading-->
+    <h1><mark>Javascript </mark><mark>: Assignment 3 (Fetch API)</mark></h1>
+
+    <!-- Marquee displaying detail of assignment -->
+    <h2><marquee style="background-color:black;color: white;font-style: italic;"scrollamount=20; >Problem Statement: Use promises/async await/fetch to get random todos from JSON Placeholder api.</marquee></h2>
+
+    <h3><mark>Press F12 to see transactions</mark></h3>
+    <script>
+        function fetchAPI(){
+            var rand = parseInt(Math.random()*200+1);
+            fetch(`https://jsonplaceholder.typicode.com/todos/${rand}`)
+            .then(response=>response.json())
+            .then(data=>console.log(data))
+        }
+        fetchAPI();
+
+
+    </script>
+
+</body>
+</html>
